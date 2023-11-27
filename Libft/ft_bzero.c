@@ -6,11 +6,13 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:56:18 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 17:59:18 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:25:26 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*tmp;
 
