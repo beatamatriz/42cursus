@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:10:23 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 16:50:39 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:20:17 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	test_function(int argc, char *argv[])
 	switch (function)
 	{
 		case 0:
+			test_all();
+		case 1:
 			if (argc != 3)
 				return (1);
 			else
@@ -26,7 +28,7 @@ int	test_function(int argc, char *argv[])
 				test_isalpha(argv[2]);
 			}
 			break;
-		case 1:
+		case 2:
 			if (argc != 3)
 				return (1);
 			else
@@ -34,7 +36,7 @@ int	test_function(int argc, char *argv[])
 				test_isdigit(argv[2]);
 			}
 			break;
-		case 2:
+		case 3:
 			if (argc != 3)
 				return (1);
 			else
@@ -42,7 +44,7 @@ int	test_function(int argc, char *argv[])
 				test_isalnum(argv[2]);
 			}
 			break;
-		case 3:
+		case 4:
 			if (argc != 3)
 				return (1);
 			else
@@ -50,7 +52,7 @@ int	test_function(int argc, char *argv[])
 				test_isascii(argv[2]);
 			}
 			break;
-		case 4:
+		case 5:
 			if (argc != 3)
 				return (1);
 			else
@@ -67,7 +69,7 @@ int	test_function(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	int	exit_code;
-	if (argc <= 2)
+	if (argc == 1)
 		return (1);
 	else
 		exit_code = test_function(argc, argv);
