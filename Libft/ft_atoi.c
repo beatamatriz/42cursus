@@ -6,12 +6,10 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:26:19 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 16:20:24 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:40:28 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)

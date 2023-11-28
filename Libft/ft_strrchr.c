@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:46 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:19:51 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:36:48 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	tmp = (char *) s;
 	len = ft_strlen(s);
-	while (len != 0)
+	while (len >= 0)
 	{
 		if (tmp[len] == c)
 			return (&tmp[len]);
@@ -36,7 +36,7 @@ void	test(char *str, char to_find)
 
 int	main (void)
 {
-	char	*str = "e5r6t7yuhdijqw82!!  ppp\?\\//(!";
+	char	*str = "xteste";
 	char	*s1;
 	char	*s2;
 	char	to_find;

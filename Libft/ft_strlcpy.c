@@ -6,12 +6,11 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:29:16 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:18:47 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:39:28 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {

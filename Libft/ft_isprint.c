@@ -6,13 +6,13 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:26:01 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 16:29:08 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:53:49 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
-	return (c >= 20 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

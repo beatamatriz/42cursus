@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:15:25 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:25:02 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:05:28 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <stdlib.h>
 # include <strings.h>
 # include <stdio.h>
+# include <errno.h>
+# include <ctype.h>
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
@@ -41,5 +43,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif

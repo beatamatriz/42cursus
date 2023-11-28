@@ -6,11 +6,13 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:59:45 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 18:26:07 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:09:51 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
+#include "libft.h"
+
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	char	*tmp_dst;
 	char	*tmp_src;

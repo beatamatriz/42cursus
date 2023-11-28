@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:21:27 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 16:41:05 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:54:57 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isupper(int c)
 {
-	return (c >= 65 && c <= 95);
+	return (c >= 65 && c <= 90);
 }

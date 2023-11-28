@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:46 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:17:18 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:43:00 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*tmp;
 	int		i;
 	int		len;
 
@@ -28,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
+
 void	test(char *str, char to_find)
 {
 	printf("%p: %s\n%p: %s\n=============\n", ft_strchr(str, to_find),
@@ -37,7 +36,7 @@ void	test(char *str, char to_find)
 
 int	main (void)
 {
-	char	*str = "e5r6t7yuhdijqw82!!  ppp\?\\//(!";
+	char	*str = "teste";
 	char	*s1;
 	char	*s2;
 	char	to_find;
@@ -51,4 +50,4 @@ int	main (void)
 		to_find++;
 	}
 	return (0);
-}*/
+}
