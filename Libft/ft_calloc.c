@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:56:49 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/27 19:29:46 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:15:37 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_bzero(ptr, count * size);
 	return (ptr);
 }
-
+/*
 int	main(void)
 {
 	int	*vector_de_numeritos;
@@ -45,4 +45,4 @@ int	main(void)
 	}
 	printf("%d:%d", vector_de_numeritos[i], vector_de_numeritos2[i]);
 	return (0);
-}
+}*/
