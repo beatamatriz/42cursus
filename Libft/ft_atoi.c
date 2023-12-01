@@ -12,27 +12,45 @@
 
 #include "libft.h"
 
+char	*skip_spaces(char *str)
+{
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	return (str);
+}
+
+char	*skip_zeroes(char *str)
+{
+	while (*str == '0')
+		str++;
+	return (str);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	n;
 	int	sign;
+	char	*tmp;
 
+	tmp = (char *) str;
+	tmp = skip_spaces(tmp);
+	tmp = skip_zeroes(tmp);
 	n = 0;
-	if (*str == '-')
+	sign = 1;
+	if (*tmp == '-')
 	{
 		sign = -1;
-		str++;
+		tmp++;
 	}
-	else
-		sign = 1;
-	while (*str >= '0' && *str <= '9')
+	else if (*tmp == '+')
+		tmp++;
+	while (*tmp >= '0' && *tmp <= '9')
 	{
 		n *= 10;
-		n += *str - '0';
-		str++;
+		n += *tmp - '0';
+		tmp++;
 	}
-	n *= sign;
-	return (n);
+	return (n * sign);
 }
 /*
 int	main(int argc, char *argv[])
@@ -44,6 +62,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	numeret = ft_atoi(argv[1]);
 	nombre = atoi(argv[1]);
-	printf("str: %s\natoi: %d\nft_atoid: %d\n", argv[1], nombre, numeret);
+	printf("tmp: %s\natoi: %d\nft_atoi: %d\n", argv[1], nombre, numeret);
 	return (0);
-}*/
+}
+*/
