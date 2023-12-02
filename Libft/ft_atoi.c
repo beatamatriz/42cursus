@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 	}
 	return (n * sign);
 }
-/*
+
 int	main(int argc, char *argv[])
 {
 	int	numeret;
@@ -65,4 +65,4 @@ int	main(int argc, char *argv[])
 	printf("tmp: %s\natoi: %d\nft_atoi: %d\n", argv[1], nombre, numeret);
 	return (0);
 }
-*/
+
