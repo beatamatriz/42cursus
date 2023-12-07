@@ -6,20 +6,20 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:26:19 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:40:28 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:19:35 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*skip_spaces(char *str)
+static char	*skip_spaces(char *str)
 {
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	return (str);
 }
 
-char	*skip_zeroes(char *str)
+static char	*skip_zeroes(char *str)
 {
 	while (*str == '0')
 		str++;
@@ -28,8 +28,8 @@ char	*skip_zeroes(char *str)
 
 int	ft_atoi(const char *str)
 {
-	int	n;
-	int	sign;
+	int		n;
+	int		sign;
 	char	*tmp;
 
 	tmp = (char *) str;
@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 	}
 	return (n * sign);
 }
-
+/*
 int	main(int argc, char *argv[])
 {
 	int	numeret;
@@ -65,4 +65,4 @@ int	main(int argc, char *argv[])
 	printf("tmp: %s\natoi: %d\nft_atoi: %d\n", argv[1], nombre, numeret);
 	return (0);
 }
-
+*/
