@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:09:19 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 17:09:37 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:34:51 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*tmp_dst;
 	char	*tmp_src;
 
-	if (dst < src)
+	if (!(dst || src) && len != 0)
+		return (NULL);
+	if (dst == src)
+		return (dst);
+	else if (dst < src)
 	{
 		tmp_dst = (char *) dst;
 		tmp_src = (char *) src;
 		while (len-- > 0)
-			*tmp_dst++ = *tmp_src;
+			*tmp_dst++ = *tmp_src++;
 	}
 	else
 	{

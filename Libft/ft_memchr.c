@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:38:39 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:15:11 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:37:34 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	tmp = (unsigned char *) s;
 	while (n-- > 0)
 	{
-		if (*tmp == c)
+		if (*tmp == (unsigned char) c)
 			return (tmp);
 		tmp++;
 	}
