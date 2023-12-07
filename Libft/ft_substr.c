@@ -1,14 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/07 16:03:43 by bbatista          #+#    #+#             */
+/*   Updated: 2023/12/07 18:59:22 by bbatista         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	int	src_len;
+	int		src_len;
 
+	if (!s)
+		return (NULL);
 	src_len = ft_strlen(s);
 	if (src_len - start < len)
 		len = src_len - start;
+	if (len < 0)
+		len = 0;
 	sub = (char *) malloc(len + 1);
 	if (sub)
 		len = ft_strlcpy(sub, &s[start], len + 1);
@@ -16,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		errno = ENOMEM;
 	return (sub);
 }
-
+/*
 int	main()
 {
 	printf("1 %s : %s\n", ft_substr("", 0, 0), "");
@@ -42,4 +57,4 @@ int	main()
 	printf("21 %s : %s\n", ft_substr("hola", 4, 1), "");
 	printf("22 %s : %s\n", ft_substr("hola", 4, 20), "");
 	printf("23 %s : %s\n", ft_substr("hola", 5, 2), "");
-}
+}*/
