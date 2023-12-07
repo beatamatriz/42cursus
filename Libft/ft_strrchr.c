@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:46 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 18:36:48 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:49:14 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (len >= 0)
 	{
-		if (tmp[len] == c)
+		if (tmp[len] == (unsigned char) c)
 			return (&tmp[len]);
 		len--;
 	}
