@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:03:43 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/07 18:59:22 by bbatista         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:05:21 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,25 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		src_len;
+	char			*sub;
+	unsigned int	src_len;
 
 	if (!s)
 		return (NULL);
 	src_len = ft_strlen(s);
-	if (src_len - start < len)
+	if (start < 0 || len == 0 || src_len <= start || src_len == 0)
+	{
+		sub = (char *) malloc(1);
+		if (sub)
+			*sub = '\0';
+		else
+			errno = ENOMEM;
+		return (sub);
+	}
+	else if (len < 0)
+		len = src_len;
+	else if (src_len - start < len)
 		len = src_len - start;
-	if (len < 0)
-		len = 0;
 	sub = (char *) malloc(len + 1);
 	if (sub)
 		len = ft_strlcpy(sub, &s[start], len + 1);
@@ -37,9 +46,9 @@ int	main()
 	printf("1 %s : %s\n", ft_substr("", 0, 0), "");
 	printf("2 %s : %s\n", ft_substr("", 0, 1), "");
 	printf("3 %s : %s\n", ft_substr("", 1, 1), "");
-	//printf("4 %s : %s\n", ft_substr("hola", -1, 0), "");
-	//printf("5 %s : %s\n", ft_substr("hola", 0, -1), "hola");
-	//printf("6 %s : %s\n", ft_substr("hola", -1, -1), "");
+	printf("4 %s : %s\n", ft_substr("hola", -1, 0), "");
+	printf("5 %s : %s\n", ft_substr("hola", 0, -1), "hola");
+	printf("6 %s : %s\n", ft_substr("hola", -1, -1), "");
 	printf("7 %s : %s\n", ft_substr("hola", 0, 0), "");
 	printf("8 %s : %s\n", ft_substr("hola", 0, 1), "h");
 	printf("9 %s : %s\n", ft_substr("hola", 0, 3), "hol");
