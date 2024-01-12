@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:18:32 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/11 16:21:11 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:04:21 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	size_t	len;
 
-	count = ft_charinstrcount(s, c);	
+	count = ft_charinstrcount(s, c);
 	split = (char **) ft_calloc(1 + count, sizeof(char *));
 	if (!split)
 		return (ft_nomem(split, count));
@@ -96,17 +96,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
-
-int	main(void)
-{
-	char **splot;
-	splot = ft_split("", 0);
-	printf("- %d -\n", ft_charinstrcount("aaaaaaaa", '0'));
-	printf("%lu\n", sizeof(splot)/sizeof(char *));
-	for (int i = 0; i < 2; i++)
-		printf("%d: %s\n", i, splot[i]);
-	if (splot)
-		ft_nomem(splot, 1);
-	return (0);
-}
-

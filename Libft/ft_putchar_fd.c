@@ -6,13 +6,13 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:30:33 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/08 14:30:52 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:33:42 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-
+	write(fd, &c, 1);
 }

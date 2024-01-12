@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:56:49 by bbatista          #+#    #+#             */
-/*   Updated: 2023/11/28 16:38:24 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:01:43 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,3 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_bzero(ptr, count * size);
 	return (ptr);
 }
-/*
-int	main(void)
-{
-	int	*vector_de_numeritos;
-	int	*vector_de_numeritos2;
-	int i;
-	int dim = 100;
-
-	vector_de_numeritos = (int *) ft_calloc(dim, sizeof(int));
-	vector_de_numeritos2 = (int *) calloc(dim, sizeof(int));
-	i = 0;
-	while (i < dim - 1)
-	{
-		printf("%d:%d, ", vector_de_numeritos[i], vector_de_numeritos2[i]);
-		i++;
-	}
-	printf("%d:%d", vector_de_numeritos[i], vector_de_numeritos2[i]);
-	return (0);
-}*/

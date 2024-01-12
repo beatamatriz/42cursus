@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:41:45 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/07 18:17:47 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:03:12 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	char s2[] = {0, 0, 127, 0};
-	char s3[] = {0, 0, 42, 0};
-
-	printf("%s\n%s\n", s2, s3);
-
-	printf("mine: %d c: % d\n", ft_memcmp(s2, s3, 4), memcmp(s2, s3, 4));
-	return (0);
-}
-*/

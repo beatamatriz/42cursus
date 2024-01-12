@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:29:16 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/07 16:34:10 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:07:18 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		*dst = '\0';
 	return (cpysize);
 }
-/*
-int	main(void)
-{
-	char	src[9] = "Diablos";
-	char	dst1[2] = "a";
-	char	dst2[2] = "a";
-	size_t	n1;
-	size_t	n2;
-
-	n1 = strlcpy(dst1, src, 2);
-	n2 = ft_strlcpy(dst2, src, 2);
-	printf("%zu: %s, %zu: %s", n1, dst1, n2, dst2);
-}*/

@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:19:14 by bbatista          #+#    #+#             */
-/*   Updated: 2023/12/11 17:59:53 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:02:41 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,67 +14,53 @@
 
 static int	ft_countdigits(long n)
 {
-	int	count;
+	int	digits;
 
 	if (!n)
 		return (1);
-	count = 0;
+	digits = 0;
 	while (n != 0)
 	{
 		n /= 10;
-		count++;
+		digits++;
 	}
-	return (count);
+	return (digits);
 }
-/*
-static long	ft_abs(long n)
+
+static void	ft_fill_num(char *str, int num, int digits)
 {
-	if (n < 0)
-		return (-n);
+	if (num < 0)
+	{
+		str[0] = '-';
+		str[digits + 1] = 0;
+	}
 	else
-		return (n);
+		str[digits] = 0;
+	while (--digits >= 0)
+	{
+		if (num >= 0)
+			str[digits] = '0' + num % 10;
+		else
+			str[digits + 1] = '0' - num % 10;
+		num /= 10;
+	}
 }
-*/
+
 char	*ft_itoa(int n)
 {
-	char	*nombre;
-	int		count;
+	char	*str;
+	int		digits;
 	long	tmp;
 
 	tmp = (long) n;
-	count = ft_countdigits(tmp);
+	digits = ft_countdigits(tmp);
 	if (tmp >= 0)
-		nombre = (char *) malloc(count + 1);
+		str = (char *) malloc(digits + 1);
 	else
-		nombre = (char *) malloc(count + 2);
-	if (nombre)
-	{	
-		if (tmp < 0)
-			nombre[0] = '-';
-		while (--count >= 0)
-		{
-			if (tmp >= 0)
-				nombre[count] = '0' + tmp % 10;
-			else
-				nombre[count + 1] = '0' - tmp % 10;
-			tmp /= 10;
-		}
-	}
+		str = (char *) malloc(digits + 2);
+	if (str)
+		ft_fill_num(str, tmp, digits);
 	else
 		errno = ENOMEM;
-	return (nombre);
+	return (str);
 }
-/*
-int	main(void)
-{
-	printf("%d, %d, %d\n",ft_countdigits(0), ft_countdigits(-623), ft_countdigits(-10));
-	printf("-9 : %s\n", ft_itoa(-9));
-	printf("-2147483648 : %s\n", ft_itoa(-2147483648LL));
-	printf("0 : %s\n", ft_itoa(0));
-	printf("10 : %s\n", ft_itoa(10));
-	printf("-1234: %s\n", ft_itoa(-1234));
-	printf("111113 : %s\n", ft_itoa(111113));
-	printf("2147483647 : %s\n", ft_itoa(2147483647));
-	return (0);
-}
-*/
