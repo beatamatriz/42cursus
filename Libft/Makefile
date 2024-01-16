@@ -47,13 +47,29 @@ ft_putnbr_fd.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
+BONUS_SOURCES =\
+ft_lstnew_bonus.c\
+ft_lstadd_front_bonus.c\
+ft_lstsize_bonus.c\
+ft_lstlast_bonus.c\
+ft_lstadd_back_bonus.c\
+ft_lstdelone_bonus.c\
+ft_lstclear_bonus.c\
+ft_lstiter_bonus.c\
+ft_lstmap_bonus.c
+
+BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
+
 all: $(NAME)
 
 $(NAME):$(OBJECTS) $(HEADER)
-	$(LIB) $(NAME) $(OBJECTS) 
+	$(LIB) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+bonus: $(OBJECTS) $(BONUS_OBJECTS) $(NAME)
+	$(LIB) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) 
@@ -61,3 +77,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+	$(MAKE) all
+
+.Phony: all clean fclean re bonus

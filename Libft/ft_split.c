@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:18:32 by bbatista          #+#    #+#             */
-/*   Updated: 2024/01/12 20:04:21 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:04:02 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	size_t	len;
 
+	if (!s)
+		return (NULL);
 	count = ft_charinstrcount(s, c);
 	split = (char **) ft_calloc(1 + count, sizeof(char *));
 	if (!split)
@@ -94,5 +96,6 @@ char	**ft_split(char const *s, char c)
 			return (ft_nomem(split, count));
 		tmp += len;
 	}
+	split[count] = NULL;
 	return (split);
 }
