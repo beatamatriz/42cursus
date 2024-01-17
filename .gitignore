@@ -1,3 +1,4 @@
 *.out
 *.o
-Libft/coses_provar/*
+*.a
+*/tests/*
