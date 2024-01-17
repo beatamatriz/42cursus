@@ -6,7 +6,7 @@
 /*   By: bbatista <bbatista@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:18:32 by bbatista          #+#    #+#             */
-/*   Updated: 2024/01/16 15:04:02 by bbatista         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:59:45 by bbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ static char	*ft_skipchar(char *str, char c)
 	return (str);
 }
 
-static int	ft_charinstrcount(const char *str, char c)
+static int	ft_splitcount(const char *str, char c)
 {
 	int		count;
 	char	*tmp;
 
+	if (!str || *str == 0)
+		return (0);
 	tmp = (char *) str;
 	count = 1;
 	while (*tmp != 0)
@@ -78,9 +80,7 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	size_t	len;
 
-	if (!s)
-		return (NULL);
-	count = ft_charinstrcount(s, c);
+	count = ft_splitcount(s, c);
 	split = (char **) ft_calloc(1 + count, sizeof(char *));
 	if (!split)
 		return (ft_nomem(split, count));
@@ -96,6 +96,23 @@ char	**ft_split(char const *s, char c)
 			return (ft_nomem(split, count));
 		tmp += len;
 	}
-	split[count] = NULL;
 	return (split);
 }
+/*
+int	main(void)
+{
+	char	*s;
+	char	**tab;
+
+	s = malloc(6);
+	*s = 0;
+	tab = ft_split(s, 0);
+	if (tab[0] == NULL)
+		printf("OK\n");
+	else
+		printf("KO\n");
+	free(s);
+	free(tab);	
+	return (0);
+}
+*/
